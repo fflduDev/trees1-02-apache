@@ -9,7 +9,7 @@ public class OrgChartImpl implements OrgChart{
 	private List<GenericTreeNode<Employee>> nodes = new ArrayList<>();
 	
 	public void addRoot(Employee e){
-
+		
 	}
 		// if there is no orgchart, start it
 	
@@ -34,7 +34,7 @@ public class OrgChartImpl implements OrgChart{
 	}
 	
 	public void showOrgChartBreadthFirst(){
-		
+
 	}
 	
 }
