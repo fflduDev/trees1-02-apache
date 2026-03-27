@@ -18,7 +18,12 @@ public class Employee implements Comparable<Employee> {
  	public String getName() {
 		return name;
 	}
-
+	
+	public Employee(String name, Integer id, String position) {
+		this.name = name;
+		this.id = id;
+		this.position = position;
+	}
 
 	public void setName(String name) {
 		this.name = name;
