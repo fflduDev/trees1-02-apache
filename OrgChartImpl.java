@@ -1,7 +1,11 @@
 package tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+
+import org.w3c.dom.Node;
 
 public class OrgChartImpl implements OrgChart{
 
@@ -42,8 +46,15 @@ public class OrgChartImpl implements OrgChart{
 
 	}
 	
-	public void showOrgChartBreadthFirst(){
-
+	public void showOrgChartBreadthFirst(GenericTreeNode rootEmployee){
+		Queue<Node<T>> queue = new LinkedList<>();
+		queue.add(rootEmployee);
+		while (!queue.isEmpty()) {
+			Node<T> curr = queue.poll();
+			System.out.print(curr.value + " ");
+			for (Node<T> child : curr.children)
+			queue.add(child);
+		}
 	}
 	
 }
