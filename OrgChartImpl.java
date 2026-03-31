@@ -27,9 +27,9 @@ public class OrgChartImpl implements OrgChart{
 	public void addDirectReport(Employee manager, Employee newPerson){
 		for (int i = 0; i < nodes.size(); i++) {
 			GenericTreeNode<Employee> node = nodes.get(i);
-			if (currentEmployee.data.equals(manager)){
+			if (node.data.equals(manager)){
 				GenericTreeNode<Employee> newE = new GenericTreeNode<>(newPerson);
-				currentEmployee.children.add(newE);
+				node.children.add(newE);
 				nodes.add(newE);
 				break;
 			}
