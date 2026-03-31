@@ -15,7 +15,7 @@ public interface OrgChart {
 		// remove the employee, give their direct reports to their supervisor
 	
 	public void showOrgChartDepthFirst(); 
-	
+		
 	public void showOrgChartBreadthFirst();
 	
 

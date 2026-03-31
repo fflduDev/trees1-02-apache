@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Vector;
 
 import org.w3c.dom.Node;
 
@@ -43,7 +44,22 @@ public class OrgChartImpl implements OrgChart{
 		// remove the employee, give their direct reports to their supervisor
 	
 	public void showOrgChartDepthFirst(){
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		stack.push(nodes.get(0));
+		while (!stack.isEmpty()){
+			TreeNode curr = stack.pop();
+			Vector<GenericTreeNode> nodes = curr.children;
+			System.out.print(curr.data + " ");
 
+			for (int i = nodes.size() - 1; i >= 0; i--){
+				q = new LinkedList<>();
+				q.add(node.key);
+				
+				stack.push(nodes.get(i));
+				
+
+			}
+		}
 	}
 	
 	public void showOrgChartBreadthFirst(){
