@@ -47,15 +47,18 @@ public class OrgChartImpl implements OrgChart{
 	}
 	
 	public void showOrgChartBreadthFirst(){
-		Queue<GenericTreeNode<T>> queue = new LinkedList<GenericTreeNode<T>>();
+		Queue<GenericTreeNode<Employee>> queue = new LinkedList<GenericTreeNode<Employee>>();
 		queue.add(nodes.get(0));
+
 		while (!queue.isEmpty()) {
-			GenericTreeNode<T> curr = queue.poll();
+			int n = queue.size();
+			GenericTreeNode<Employee> curr = queue.poll();
+
 			System.out.print(curr.data + " ");
-			for (GenericTreeNode<T> child : curr.children){
+			for (GenericTreeNode<Employee> child : curr.children){
 				queue.add(child);
 			}
-			
+			n--;
 		}
 	}
 	
