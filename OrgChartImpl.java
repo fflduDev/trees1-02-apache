@@ -43,7 +43,7 @@ public class OrgChartImpl implements OrgChart{
 		// add the newPerson as a direct report (child) of manager
 	
 	public void removeEmployee(Employee firedPerson){
-
+		
 	}
 		// remove the employee, give their direct reports to their supervisor
 	
