@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 import java.util.Vector;
+
+import javax.swing.tree.TreeNode;
 
 import org.w3c.dom.Node;
 
@@ -21,7 +24,8 @@ public class OrgChartImpl implements OrgChart{
 	
 	
 	public void clear(){
-		
+		nodes.clear();
+		System.out.println("OrgChart cleared.");
 	}
 		// get rid of the org chart
 	
