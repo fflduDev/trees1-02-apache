@@ -43,7 +43,20 @@ public class OrgChartImpl implements OrgChart{
 		// add the newPerson as a direct report (child) of manager
 	
 	public void removeEmployee(Employee firedPerson){
-		
+		Queue<GenericTreeNode<Employee>> queue = new LinkedList<GenericTreeNode<Employee>>();
+		queue.add(nodes.get(0));
+
+		while (!queue.isEmpty()) {
+			GenericTreeNode<Employee> curr = queue.poll();
+
+			for (GenericTreeNode<Employee> child : curr.children){
+				if(child.equals(firedPerson)) {
+					curr.removeChild(firedPerson);
+				}
+
+				queue.add(child);
+			}
+		}
 	}
 		// remove the employee, give their direct reports to their supervisor
 	
